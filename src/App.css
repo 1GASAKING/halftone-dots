@@ -66,3 +66,94 @@
   border-color: #1a1820;
   color: #fff;
 }
+
+.url-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: min(420px, 80vw);
+}
+
+.url-input {
+  flex: 1;
+  border: 1px solid #e3e1e6;
+  background: #fff;
+  color: #1a1820;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 160ms ease;
+}
+
+.url-input:focus {
+  border-color: #7b2ff7;
+}
+
+.url-input::placeholder {
+  color: #b0adb8;
+}
+
+.url-btn {
+  border: 1px solid #1a1820;
+  background: #1a1820;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.url-btn:hover {
+  background: #3a3850;
+}
+
+.url-btn:active {
+  transform: scale(0.97);
+}
+
+.reset-btn {
+  border: none;
+  background: transparent;
+  color: #6b6875;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  transition: color 160ms ease;
+}
+
+.reset-btn:hover {
+  color: #1a1820;
+}
+
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: min(420px, 80vw);
+  font-size: 0.85rem;
+  color: #6b6875;
+}
+
+.slider-row label {
+  white-space: nowrap;
+  font-weight: 500;
+  min-width: 3.5rem;
+}
+
+.slider-row input[type="range"] {
+  flex: 1;
+  accent-color: #7b2ff7;
+  height: 4px;
+  cursor: pointer;
+}
+
+.slider-hint {
+  min-width: 3rem;
+  text-align: right;
+  font-weight: 500;
+}

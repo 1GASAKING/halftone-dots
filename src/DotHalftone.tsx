@@ -49,6 +49,8 @@ export type DotHalftoneProps = {
   gradient?: [string, string]
   /** Corner-cluster accent color. */
   accent?: string
+  /** Grid cell size in CSS pixels — smaller = more dense dots (default: 5). */
+  cellSize?: number
   className?: string
   style?: React.CSSProperties
 }
@@ -63,6 +65,7 @@ export function DotHalftone({
   src,
   gradient,
   accent = '#5b21ff',
+  cellSize = 5,
   className,
   style,
 }: DotHalftoneProps) {
@@ -101,9 +104,8 @@ export function DotHalftone({
       canvas.height = Math.round(cssH * ss)
       ctx.setTransform(ss, 0, 0, ss, 0, 0)
 
-      const CELL = 5
-      const cols = Math.max(1, Math.round(cssW / CELL))
-      const rows = Math.max(1, Math.round(cssH / CELL))
+      const cols = Math.max(1, Math.round(cssW / cellSize))
+      const rows = Math.max(1, Math.round(cssH / cellSize))
       const cw = cssW / cols
       const ch = cssH / rows
       const maxR = Math.min(cw, ch) / 2
@@ -272,7 +274,7 @@ export function DotHalftone({
       ro.disconnect()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [src, gradKey])
+  }, [src, gradKey, cellSize])
 
   const bgMask =
     'radial-gradient(circle at 50% 50%, #000 0%, #000 30%, rgba(0,0,0,0.4) 55%, transparent 78%)'
